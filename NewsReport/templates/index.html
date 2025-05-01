@@ -5,6 +5,17 @@
         <title>NewsReport</title>
     </head>
     <body>
-        <h1>hello</h1>
+        <h1>News</h1>
+        {% for article in articles %}
+        {% if article %}
+            <div>
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.description }}</p>
+                <a href="{{ article.url }}">記事を読む</a>
+            </div>
+        {% else %}
+            <p>記事が見つかりませんでした。</p>
+        {% endif %}
+        {% endfor %}
     </body>
 </html>
